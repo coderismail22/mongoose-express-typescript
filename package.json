@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-"lint": "eslint src",
-"lint:fix": "eslint src --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.2.0",
+    "prettier": "^3.2.5",
     "typescript-eslint": "^7.9.0"
   },
   "dependencies": {
