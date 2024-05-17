@@ -3,7 +3,6 @@ import {
   Guardian,
   LocalGuardian,
   Student,
-  Student,
   Username,
 } from './student/student.interface';
 
