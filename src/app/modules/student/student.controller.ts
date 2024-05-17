@@ -3,8 +3,9 @@ import { StudentServices } from './student.service';
 const createStudent = async (req: Request, res: Response) => {
   try {
     //will call service function to send this data
-    const student = req.body;
-    const result = await StudentServices.insertStudentToDB(student);
+    console.log('catch data for test', req.body);
+    const { student: studentData } = req.body;
+    const result = await StudentServices.insertStudentToDB(studentData);
 
     //will send response
     res.status(200).json({
@@ -18,5 +19,5 @@ const createStudent = async (req: Request, res: Response) => {
 };
 
 export const StudentControllers = {
-  createStudent
+  createStudent,
 };

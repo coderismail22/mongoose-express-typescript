@@ -6,3 +6,5 @@ const router = express.Router();
 //Modular Flow : Route -> Controller -> Service -><- DB (Model in Mongoose)
 
 router.post('/create-student', StudentControllers.createStudent);
+
+export const StudentRoutes = router;
