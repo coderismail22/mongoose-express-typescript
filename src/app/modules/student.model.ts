@@ -1,15 +1,16 @@
-import { Schema } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import {
   Guardian,
   LocalGuardian,
   Student,
+  Student,
   Username,
 } from './student/student.interface';
-
 
 //Schema Creation:
 
 //You have to write types in capital letters in mongoose.
+
 const userNameSchema = new Schema<Username>({
   firstName: {
     type: String,
@@ -73,3 +74,9 @@ const studentSchema = new Schema<Student>({
   guardian: guardianSchema,
   localGuardian: localGuardianSchema,
 });
+
+//Model Creation:
+
+//First letter of the model name should be written capital and it should be singular.
+
+const Student = model<Student>('Student', studentSchema);
