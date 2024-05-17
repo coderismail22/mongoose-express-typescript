@@ -78,4 +78,4 @@ const studentSchema = new Schema<Student>({
 
 //First letter of the model name should be written capital and it should be singular.
 
-const Student = model<Student>('Student', studentSchema);
+export const StudentModel = model<Student>('Student', studentSchema);
