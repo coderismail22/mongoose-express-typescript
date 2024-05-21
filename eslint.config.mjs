@@ -1,7 +1,7 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import prettier from 'prettier-eslint';
+// import prettier from 'prettier-eslint';
 
 export default [
   {
@@ -18,7 +18,7 @@ export default [
       'prefer-const': 'error',
       'no-console': 'warn',
       'no-undef': 'error',
-      ...prettier.rules,
+      // ...prettier.rules,
     },
   },
   pluginJs.configs.recommended,
