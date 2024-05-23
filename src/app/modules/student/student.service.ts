@@ -1,4 +1,4 @@
-import { Student } from './student.interface';
+import { Student } from './student.type';
 import { StudentModel } from './student.model';
 
 const insertStudentToDB = async (student: Student) => {
@@ -19,5 +19,5 @@ const getSingleStudentById = async (studentId: string) => {
 export const StudentServices = {
   insertStudentToDB,
   getAllStudents,
-  getSingleStudentById
+  getSingleStudentById,
 };
