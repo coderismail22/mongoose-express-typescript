@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { model } from 'mongoose';
 import { studentSchema } from './student.schema';
 import { TStudent } from './student.type';
 
