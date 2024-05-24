@@ -1,7 +1,7 @@
-import { Student } from './student.type';
+import { TStudent } from './student.type';
 import { StudentModel } from './student.model';
 
-const insertStudentToDB = async (student: Student) => {
+const insertStudentToDB = async (student: TStudent) => {
   const result = await StudentModel.create(student);
   return result;
 };
