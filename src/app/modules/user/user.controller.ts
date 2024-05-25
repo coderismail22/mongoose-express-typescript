@@ -1,7 +1,11 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { UserServices } from './user.service';
 
-const insertStudentIntoDB = async (req: Request, res: Response) => {
+const insertStudentIntoDB = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     //will call service function to send this data
     // console.log('catch data for test', req.body);
@@ -20,11 +24,7 @@ const insertStudentIntoDB = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: 'Could not create student data.',
-      error: error,
-    });
+    next(error);
   }
 };
 

@@ -45,7 +45,9 @@ const getSingleStudentById = async (req: Request, res: Response) => {
       message: 'Student data retrieved successfully',
       data: result,
     });
-  } catch (error) {}
+  } catch (error) {
+    
+  }
 };
 export const StudentControllers = {
   // createStudent,
