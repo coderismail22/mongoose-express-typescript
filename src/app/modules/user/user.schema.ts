@@ -1,5 +1,6 @@
 import { Schema } from 'mongoose';
 import { TUser } from './user.type';
+import config from '../../config';
 
 export const userSchema = new Schema<TUser>(
   {
@@ -33,3 +34,20 @@ export const userSchema = new Schema<TUser>(
     timestamps: true,
   },
 );
+
+userSchema.pre('save', async function (next) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
+  const user = this; // doc
+  // hashing password and save into DB
+  user.password = await bcrypt.hash(
+    user.password,
+    Number(config.bcrypt_salt_rounds),
+  );
+  next();
+});
+
+// set '' after saving password
+userSchema.post('save', function (doc, next) {
+  doc.password = '';
+  next();
+});

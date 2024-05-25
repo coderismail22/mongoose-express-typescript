@@ -6,4 +6,4 @@ import { TStudent } from './student.type';
 
 //First letter of the model name should be written capital and it should be singular.
 
-export const StudentModel = model<TStudent>('Student', studentSchema);
+export const studentModel = model<TStudent>('Student', studentSchema);

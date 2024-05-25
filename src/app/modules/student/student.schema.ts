@@ -12,7 +12,6 @@ export const userNameSchema = new Schema<TUsername>({
   },
   middleName: {
     type: String,
-    required: true,
   },
   lastName: {
     type: String,
@@ -56,6 +55,12 @@ export const localGuardianSchema = new Schema<TLocalGuardian>({
 
 export const studentSchema = new Schema<TStudent>({
   id: { type: String, required: true, unique: true },
+  user: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+    ref: 'User',
+  },
   name: {
     type: userNameSchema,
     required: true,
@@ -83,9 +88,4 @@ export const studentSchema = new Schema<TStudent>({
   permanentAddress: { type: String, required: true },
   guardian: { type: guardianSchema, required: true },
   localGuardian: { type: localGuardianSchema, required: true },
-  isActive: {
-    type: String,
-    enum: ['active', 'inactive'],
-    default: 'active',
-  },
 });
