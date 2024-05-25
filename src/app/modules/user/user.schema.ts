@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { TUser } from './user.type';
 import config from '../../config';
+import bcrypt from 'bcrypt';
 
 export const userSchema = new Schema<TUser>(
   {
