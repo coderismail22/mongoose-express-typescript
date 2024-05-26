@@ -2,13 +2,10 @@ import { NextFunction, Request, Response } from 'express';
 import { UserServices } from './user.service';
 import sendResponse from '../../utils/sendResponse';
 import httpStatus from 'http-status';
+import catchAsync from '../../utils/catchAsync';
 
-const insertStudentIntoDB = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
-  try {
+const insertStudentIntoDB = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     //will call service function to send this data
     // console.log('catch data for test', req.body);
 
@@ -26,10 +23,8 @@ const insertStudentIntoDB = async (
       message: 'Student Created Successfully',
       data: result,
     });
-  } catch (error) {
-    next(error);
-  }
-};
+  },
+);
 
 export const userControllers = {
   insertStudentIntoDB,
