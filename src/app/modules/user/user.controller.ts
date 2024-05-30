@@ -11,7 +11,7 @@ const insertStudentIntoDB = catchAsync(
 
     const { password, student: studentData } = req.body;
     //todo: Zod Validation
-    const result = await UserServices.insertStudentIntoDB(
+    const result = await UserServices.createStudentIntoDB(
       password,
       studentData,
     );
@@ -26,6 +26,6 @@ const insertStudentIntoDB = catchAsync(
   },
 );
 
-export const userControllers = {
+export const UserControllers = {
   insertStudentIntoDB,
 };
