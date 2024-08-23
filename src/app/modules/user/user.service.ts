@@ -10,7 +10,7 @@ import { User } from './user.model';
 import { generateStudentId } from './user.utils';
 
 const createStudentIntoDB = async (password: string, payload: TStudent) => {
-  // create a user object
+  // create an user object
   const userData: Partial<TUser> = {};
 
   //if password is not given , use default password
