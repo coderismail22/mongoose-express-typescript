@@ -10,10 +10,21 @@ const globalErrorHandler = (
   const errorMsg = err.message || 'Something went wrong';
 
   return res.status(statusCode).json({
-    success: "false",
+    success: 'false',
     errorMsg,
     error: err,
   });
 };
 
 export default globalErrorHandler;
+
+/**
+ * Structure of error:
+ * success,
+ * message,
+ * errorSources:[
+ * path:'',
+ * message: ''
+ * ],
+ * stack
+ */
